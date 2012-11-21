@@ -69,7 +69,7 @@
             if (document.activeElement == this.textarea[0]) {
 				self.startExpand();
 			}
-			this.textarea.css({overflow: 'hidden', display: 'block'});
+			this.textarea.css({overflow: 'hidden', display: this.textarea.css('display') == 'none' ? 'none' : 'block'});
 			this.textarea.bind('focus', function() { self.startExpand() } ).bind('blur', function() { self.stopExpand() });
 			this.checkExpand();
 		},
